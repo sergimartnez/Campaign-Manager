@@ -1,0 +1,25 @@
+<h1>Content details</h1>
+<h2>Name: <%= @my_content.name %></h2>
+<h3>Description: <%= @my_content.description %></h3>
+<h3>File Attached: <%= link_to "See file", @my_content.attachment.url(:original, false) %></h3>
+<h2>Comments</h2>
+<%= form_for @my_comment, url: campaign_prototype_content_comments_path(@my_campaign.id, @my_content.prototype_id, @my_content) do |f| %>
+  <%= f.label :comment_text %>
+  <%= f.text_area :comment_text %>
+  
+  <%= f.button %>
+<% end %>
+<div class="container-fluid">
+    <% @my_comments.each do |comment| %>    
+      <div class="row" style="display: flex; flex-wrap:wrap;">
+          
+        <div class="col-sm-4" >
+          <h3><%= comment.user.name %></h3>
+        </div>
+        <div class="col-sm-8" >
+          <h3><%= comment.comment_text %></h3>
+        </div>
+      </div>
+    <% end %>
+</div>
+

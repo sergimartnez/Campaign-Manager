@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CampaignMaster</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= render  "site/header-logged-in" %> 
+    <% else %>
+      <%= render  "site/header-logged-out" %>
+    <% end %>
+    <%= yield %>
+    <%= render "site/footer" %>
+  </body>
+</html>

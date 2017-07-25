@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <%= link_to "Create campaign!", new_campaign_path %>
+</div>
+
+<div class="container-fluid">
+  <% @campaigns.each do |campaign| %>    
+    <div class="row" style="display: flex; flex-wrap:wrap;">
+        
+      <div class="col-sm-4" >
+        <a href="/campaigns/<%= campaign.id %>"><h3><%= campaign.name %></h3></a>
+      </div>
+    </div>
+    <div class="row" style="display: flex; flex-wrap:wrap;">
+        
+      <div class="col-sm-12" >
+        <h4><%= campaign.description %></h4>
+      </div>
+    </div>
+    <div class="row" style="display: flex; flex-wrap:wrap;">
+        
+      <div class="col-sm-6" >
+        <h4>Start Date: <%= campaign.start_date %></h4>
+      </div>
+      <div class="col-sm-6" >
+        <h4>End Date: <%= campaign.end_date %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>

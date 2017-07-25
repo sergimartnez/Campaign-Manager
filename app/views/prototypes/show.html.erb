@@ -1,0 +1,18 @@
+<h1>Prototype details</h1>
+<h2>Name: <%= @my_prototype.name %></h2>
+<h3>Description: <%= @my_prototype.description %></h3>
+<h1>Contents</h1>
+
+<h3><%= link_to "Add Content", new_campaign_prototype_content_path(@my_prototype.campaign_id, @my_prototype) %></h3>
+
+<div class="container-fluid">
+  <% @my_prototype.contents.each do |content| %>    
+    <div class="row" style="display: flex; flex-wrap:wrap;">
+        
+      <div class="col-sm-4" >
+        <a href="/campaigns/<%= @my_prototype.campaign_id %>/prototypes/<%= @my_prototype.id %>/contents/<%= content.id %>"><h3><%= content.name %></h3></a>
+      </div>
+    </div>
+  <% end %>
+</div>
+

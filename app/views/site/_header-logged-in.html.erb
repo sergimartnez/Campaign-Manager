@@ -1,0 +1,24 @@
+<header>
+  <nav class="navbar navbar-default navbar-static-top" style="background: #67b26f;background: -webkit-linear-gradient(to right, #67b26f, #4ca2cd);  background: linear-gradient(to right, #67b26f, #4ca2cd);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="border: none; background-color: transparent;">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand" style="height:inherit;">
+          <img class="header-logo" src="{% static 'images/logo.png' %}" alt="Wolalab">
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+        <ul class="nav navbar-nav">
+          <li>
+            <%= link_to "Sign out!", destroy_user_session_path, :method => :delete %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
